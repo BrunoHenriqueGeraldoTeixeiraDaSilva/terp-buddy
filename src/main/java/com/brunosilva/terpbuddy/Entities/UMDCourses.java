@@ -18,7 +18,6 @@ public class UMDCourses {
     private String department;
 
     //Constructors
-
     public UMDCourses() {
 
     }
