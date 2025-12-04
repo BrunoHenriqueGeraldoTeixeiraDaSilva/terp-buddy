@@ -14,7 +14,7 @@ public class StudyRequest {
     // Many StudyRequests can reference the same user
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
+    private User user;
 
     // Many StudyRequests can reference the same course
     @ManyToOne
@@ -31,7 +31,7 @@ public class StudyRequest {
     public StudyRequest() {}
 
     // Constructor for required fields
-    public StudyRequest(Users user, UMDCourses course, String message) {
+    public StudyRequest(User user, UMDCourses course, String message) {
         this.user = user;
         this.course = course;
         this.message = message;
@@ -46,11 +46,11 @@ public class StudyRequest {
         this.id = id;
     }
 
-    public Users getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Users user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

@@ -15,7 +15,7 @@ public class UserCourses {
     // Many UserCourses entries can reference the same user
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
+    private User user;
 
     // Many UserCourses entries can reference the same course
     @ManyToOne
@@ -26,7 +26,7 @@ public class UserCourses {
     public UserCourses() {}
 
     // Constructor for required fields
-    public UserCourses(Users user, UMDCourses course) {
+    public UserCourses(User user, UMDCourses course) {
         this.user = user;
         this.course = course;
     }
@@ -40,11 +40,11 @@ public class UserCourses {
         this.id = id;
     }
 
-    public Users getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Users user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     //Mapping the columns to varibles
     @Id
@@ -26,19 +26,19 @@ public class Users {
     private String bio;
 
     //Constructors
-    public Users() {
+    public User() {
 
     }
 
     //Must have information
-    public Users(Long id, String name, String email, String password) {
+    public User(Long id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public Users(Long id, String name, String email, String password, String major, String year, String bio) {
+    public User(Long id, String name, String email, String password, String major, String year, String bio) {
         this.id = id;
         this.name = name;
         this.email = email;
