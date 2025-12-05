@@ -11,6 +11,8 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    /*BUSINESS LOGIC CLASS */
+
     //Creating an instance of our repository to be able to interact with DB
     private final UserRepository userRepository;
 
@@ -39,8 +41,18 @@ public class UserService {
     }
 
     // Update user profile fields (bio, major, etc.)
-    public User updateUser(User user){
-        return userRepository.save(user);
+    public User updateUser(Long id, User updatedUser) {
+
+        User updatingUser = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        updatingUser.setName(updatedUser.getName());
+        updatingUser.setMajor(updatedUser.getMajor());
+        updatingUser.setYear(updatedUser.getYear());
+        updatingUser.setBio(updatedUser.getBio());
+
+        return userRepository.save(updatingUser);
+
     }
 
 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserCoursesRepository extends JpaRepository<UserCoursesRepository, Long> {
-    List<UserCourses> findByUserId(Long userId);
-    List<UserCourses> findByClassId(Long classId);
+public interface UserCoursesRepository extends JpaRepository<UserCourses, Long> {
+    List<UserCourses> findByUserId(Long userId);       // correct
+    List<UserCourses> findByCourseId(Long courseId);   // change from ClassId → CourseId
 }
