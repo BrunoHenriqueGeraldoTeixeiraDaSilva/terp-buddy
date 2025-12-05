@@ -16,6 +16,7 @@ public class UserService {
     //Creating an instance of our repository to be able to interact with DB
     private final UserRepository userRepository;
 
+    //Constructor
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
